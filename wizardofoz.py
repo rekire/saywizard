@@ -41,51 +41,31 @@ os.system("clear")
 keys = "1234567890qwertyuiopasdfghjklzxcvbnm"
 keyList = list(keys)
 
-#print os.path.dirname(os.path.abspath(inspect.stack()[0][1]))
-
 f = open(os.path.dirname(os.path.abspath(inspect.stack()[0][1])) + "/script.txt")
 # will need to replace this with an argument, or perhaps not to keep command line simple
 
-#lineNo = 1
 linePos = 0
-#lines = []
 lines = []
 keysIndex = []
 
 next = f.readline()
 while next != "":
-	next = next.strip()	
-#	lines.append(next)
+	next = next.strip()
 	lines.append([])
 	lines[linePos].append(keyList[linePos])
 	keysIndex.append(keyList[linePos])
 	lines[linePos].append(next)
-
-	#print(str(lineNo) + ". " + next)
-#	lineNo = lineNo + 1
 	linePos = linePos + 1
 	next = f.readline()
 
 #should probably clean up empty array entries
 lineTotal = len(lines)
-#print(lines)
 
 print("Press the key to say the phrase:")
 printLines(lines)
-
-#keyItem = keysIndex.index("q")
-
-#print keyItem
-
-#os.system("say " + lines[0])
 
 while True:
 	choice = wait_key()
 	keyItem = keysIndex.index(choice) 
 	#need an if statement here to check if the keypress is in the range
 	os.system("say -v Samantha \"" + lines[keyItem][1] + "\"")
-#	if (choice <= lineTotal)        
-#		os.system("say " + lines[choice])
- #       break
-
-
