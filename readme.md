@@ -4,6 +4,8 @@ Press shortcut keys to have your mac read aloud phrases from a text file.
 
 Designed for running a Wizard of Oz voice interface test on OSX using "say".
 
+Please note this fork is using the voice of Anna to support the German language.
+
 ## USE
 
 1. Download and unzip this script to your mac
